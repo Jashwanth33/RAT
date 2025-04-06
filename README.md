@@ -1,7 +1,7 @@
 This is a simplified example for educational purposes only. In a real-world scenario, such tools are often much more complex and include various features for evading detection, encrypting communications, and more.
 
 **Client.py (Victim's Machine)**
-import socket
+import socket//
 import subprocess
 import os
 
