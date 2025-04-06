@@ -1,13 +1,3 @@
-To format this properly in your **GitHub README.md file**, follow these steps:
-
-### **1. Use Markdown for Formatting**
-GitHub uses Markdown to format text in the README file. To ensure the Python code is well-structured and readable, wrap it in **triple backticks** (` ``` `) and specify the `python` language for syntax highlighting.
-
-### **2. Example README File Format**
-Here’s how you can structure your **README.md** file:
-
-markdown
-# Remote Access Tool (RAT)
 
 ## Overview
 A **Remote Access Tool (RAT)** is used to control a target machine remotely.  
