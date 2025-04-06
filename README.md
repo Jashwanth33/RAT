@@ -3,7 +3,7 @@ This is a simplified example for educational purposes only. In a real-world scen
 pip install black
 
 # Format code with black
-import socket
+'''import socket
 import subprocess
 import os
 
@@ -27,7 +27,7 @@ def main():
 
 if _name_ == "_main_":
     main()
-
+'''
 
 **Client.py (Victim's Machine)**
 import socket
