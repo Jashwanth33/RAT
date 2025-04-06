@@ -3,8 +3,6 @@ This is a simplified example for educational purposes only. In a real-world scen
 pip install black
 
 # Format code with black
-black your_script.py
-**Client.py (Victim's Machine)**
 import socket
 import subprocess
 import os
